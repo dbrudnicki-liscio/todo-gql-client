@@ -9,7 +9,6 @@ import {
 import { KeyboardEvent, useState } from "react";
 import TodoListItem from "./TodoListItem";
 import { useTodos } from "../api/hooks";
-import { Todo } from "../gql/graphql";
 
 export default function App() {
   const [todo, setTodo] = useState("");
@@ -23,7 +22,7 @@ export default function App() {
   };
 
   const displayList = () => {
-    return todos?.map((todoItem: Todo) => (
+    return todos?.map((todoItem) => (
       <TodoListItem
         key={todoItem.id}
         id={todoItem.id}
